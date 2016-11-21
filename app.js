@@ -6,7 +6,10 @@
 
     angular.module('NameModule', [])
 
-        .controller('NameController', function ($scope) {
+        .controller('NameController', NameController);
+        NameController.$inject = [$scope];
+
+    function NameController($scope) {
             $scope.name = 'Easy';
             $scope.input = "";
             $scope.message = "";
@@ -25,6 +28,6 @@
             }
 
 
-        });
+        };
 
 })();
